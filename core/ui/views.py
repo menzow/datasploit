@@ -53,7 +53,7 @@ def status(request):
 		taskId = request.POST.get("taskId", None)
 		domain = request.POST.get("domain", None)
 		if taskId and domain:
-			client = MongoClient()
+			client = MongoClient(config.mongo_uri)
                         db = client.database1
 			cursor = db.domaindata.find({"type": "poller", "status_check": taskId})
 			if cursor.count() == 1:
