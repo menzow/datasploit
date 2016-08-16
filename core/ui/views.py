@@ -12,6 +12,7 @@ from pymongo import MongoClient
 from bson import json_util
 from json2html import *
 import cgi
+import config
 # Create your views here.
 
 def index(request):
